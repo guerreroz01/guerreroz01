@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/guerreroz01/static/css/main.6c7c84d0.chunk.css",
-    "main.js": "/guerreroz01/static/js/main.fd585c30.chunk.js",
-    "main.js.map": "/guerreroz01/static/js/main.fd585c30.chunk.js.map",
+    "main.js": "/guerreroz01/static/js/main.5f480221.chunk.js",
+    "main.js.map": "/guerreroz01/static/js/main.5f480221.chunk.js.map",
     "runtime-main.js": "/guerreroz01/static/js/runtime-main.e5b6959c.js",
     "runtime-main.js.map": "/guerreroz01/static/js/runtime-main.e5b6959c.js.map",
     "static/js/2.ab82fc8e.chunk.js": "/guerreroz01/static/js/2.ab82fc8e.chunk.js",
     "static/js/2.ab82fc8e.chunk.js.map": "/guerreroz01/static/js/2.ab82fc8e.chunk.js.map",
     "index.html": "/guerreroz01/index.html",
-    "precache-manifest.f9640afd0831dde1299393bd5443fcd8.js": "/guerreroz01/precache-manifest.f9640afd0831dde1299393bd5443fcd8.js",
+    "precache-manifest.d912574fd404d1e95b42c4fb7330facd.js": "/guerreroz01/precache-manifest.d912574fd404d1e95b42c4fb7330facd.js",
     "service-worker.js": "/guerreroz01/service-worker.js",
     "static/css/main.6c7c84d0.chunk.css.map": "/guerreroz01/static/css/main.6c7c84d0.chunk.css.map",
     "static/js/2.ab82fc8e.chunk.js.LICENSE.txt": "/guerreroz01/static/js/2.ab82fc8e.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.e5b6959c.js",
     "static/js/2.ab82fc8e.chunk.js",
     "static/css/main.6c7c84d0.chunk.css",
-    "static/js/main.fd585c30.chunk.js"
+    "static/js/main.5f480221.chunk.js"
   ]
 }
