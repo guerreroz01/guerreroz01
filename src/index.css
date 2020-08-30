@@ -1,13 +1,296 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
 }
+
+body {
+  min-width: 100vw;
+  background: -moz-radial-gradient(40% 0%, circle farthest-side, #474747 0%, #1f1e1e 100%);
+  /* FF3.6+ */
+  background: -webkit-radial-gradient(40% 0%, circle farthest-side, #474747 0%, #1f1e1e 100%);
+  /* Chrome10+,Safari5.1+ */
+}
+
+.container {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+}
+@media screen and (max-width: 1000px) {
+  .container {
+    min-height: 100vh;
+  }
+}
+
+.navbar {
+  position: relative;
+  z-index: 100;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+.navbar .logo {
+  width: 130px;
+  height: 70px;
+  padding: 20px 0 0 40px;
+  letter-spacing: 3px;
+  font-size: 3.5rem;
+  color: white;
+  position: relative;
+}
+.navbar .logo a {
+  text-decoration: none;
+  color: white;
+}
+.navbar .logo :first-child {
+  letter-spacing: 6px;
+}
+.navbar .logo :last-child {
+  position: relative;
+  top: -10px;
+}
+.navbar nav {
+  width: 350px;
+  padding: 30px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-around;
+}
+@media screen and (max-width: 460px) {
+  .navbar nav {
+    flex-flow: column;
+    justify-content: space-around;
+    padding-right: 30px;
+    width: auto;
+  }
+}
+@media screen and (max-width: 460px) {
+  .navbar nav :last-child {
+    margin-top: 10px;
+  }
+}
+.navbar nav a {
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2.5px;
+  font-size: 1.3rem;
+}
+.navbar nav a:hover {
+  text-shadow: 0px 6px 5px #020202;
+  font-size: 1.31rem;
+}
+
+.main {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .hero {
+  width: 50%;
+  height: 70vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.main .hero .hero-title {
+  align-self: flex-start;
+  padding-left: 20%;
+  color: white;
+  font-size: 1.5rem;
+}
+.main .hero .hero-title_h1 h1 {
+  font-size: 11rem;
+  letter-spacing: 0.5rem;
+  color: white;
+  text-shadow: 0px 0px 30px #141414;
+}
+@media screen and (max-width: 460px) {
+  .main .hero .hero-title_h1 h1 {
+    font-size: 8rem;
+  }
+}
+.main .hero .hero-subtitle {
+  color: #979696;
+  align-self: flex-end;
+  padding-right: 20%;
+  font-size: 1.5rem;
+}
+.main .contact-main {
+  width: 100%;
+  padding-top: 5rem;
+  min-height: 80vh;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  display: flex;
+  flex-flow: row nowrap;
+  color: #cacaca;
+}
+@media screen and (max-width: 1090px) {
+  .main .contact-main {
+    flex-flow: column;
+    height: auto;
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 530px) {
+  .main .contact-main {
+    padding: 0;
+  }
+}
+.main .contact-main .contact-main__aboutme {
+  padding: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  flex: 1 1 50%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+}
+.main .contact-main .contact-main__aboutme h2 {
+  font-size: 4rem;
+  letter-spacing: 3px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0px 0px 30px #141414;
+}
+@media screen and (max-width: 656px) {
+  .main .contact-main .contact-main__aboutme h2 {
+    font-size: 2rem;
+  }
+}
+.main .contact-main .contact-main__aboutme .aboutme__p {
+  padding: 2rem 3rem 4rem 3rem;
+  font-weight: lighter;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 2.5rem;
+  letter-spacing: 2px;
+}
+.main .contact-main .contact-main__aboutme div {
+  text-align: center;
+}
+.main .contact-main .contact-main__aboutme div h3 {
+  text-shadow: 0px 0px 30px #141414;
+  letter-spacing: 3px;
+  font-size: 1.8rem;
+  color: white;
+}
+.main .contact-main .contact-main__aboutme div p {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+.main .contact-main .contact-main__form {
+  position: relative;
+  z-index: 1;
+  padding: 4rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+  flex: 1 1 50%;
+  box-shadow: -6px 9px 19px -2px #000000;
+  animation-name: fadein;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+}
+.main .contact-main .contact-main__form h2 {
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 3px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0px 0px 30px #141414;
+}
+@media screen and (max-width: 656px) {
+  .main .contact-main .contact-main__form h2 {
+    font-size: 2rem;
+  }
+}
+.main .contact-main .contact-main__form .form {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+.main .contact-main .contact-main__form .form button {
+  align-self: center;
+  width: 20rem;
+  padding: 2rem 2rem;
+  background: transparent;
+  outline: none;
+  border: none;
+  box-shadow: 0px 5px 32px -7px #000000;
+  color: white;
+  cursor: pointer;
+}
+.main .contact-main .contact-main__form .form button:hover {
+  box-shadow: 0px 0px 12px -9px #fff;
+  color: #a0a0a0;
+}
+.main .contact-main .contact-main__form .form input {
+  height: 5rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #5c5c5c;
+  color: white;
+  padding-left: 2rem;
+}
+.main .contact-main .contact-main__form .form input:focus {
+  outline: none;
+}
+.main .contact-main .contact-main__form .form input:placeholder-shown {
+  font-size: 1.4rem;
+  padding: 0;
+}
+
+.footer {
+  height: 200px;
+  width: 100px;
+  position: absolute;
+  bottom: 0;
+}
+.footer .social {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.footer .social a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
