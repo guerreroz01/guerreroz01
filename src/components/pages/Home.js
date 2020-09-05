@@ -5,7 +5,7 @@ function Home() {
     <>
       <div className="hero">
         <div className="hero-title">
-          <p>Hola.. soy </p>
+          <p>Hi.. I'm</p>
         </div>
         <div className="hero-title_h1">
           <h1>OLIVER</h1>

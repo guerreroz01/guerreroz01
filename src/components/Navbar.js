@@ -12,8 +12,8 @@ function Navbar() {
           </Link>
         </div>
         <nav>
-          <Link to="/projects">PROJECTOS</Link>
-          <Link to="/contact">CONTACTO</Link>
+          <Link to="/projects">PROJECTS</Link>
+          <Link to="/contact">CONTACT</Link>
         </nav>
       </div>
     </>
