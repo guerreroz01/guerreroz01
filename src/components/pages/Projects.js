@@ -4,51 +4,84 @@ import Card from "../Card";
 import Button from "../Button";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import data from "../data/DataProjects";
+
 function Projects() {
   const [w, setW] = useState(window.innerWidth);
+  const [cardProject, setCardProject] = useState(3);
 
   window.onresize = function (e) {
     setW(window.innerWidth);
   };
 
+  const handleClickBack = () => {
+    if (cardProject === 0) {
+      setCardProject(data.length - 1);
+    } else {
+      setCardProject((prevState) => prevState - 1);
+    }
+  };
+
+  const handleClickForward = () => {
+    if (cardProject === data.length - 1) {
+      setCardProject(0);
+    } else {
+      setCardProject((prevState) => prevState + 1);
+    }
+  };
+
   return (
     <div className="projects__wrapper">
       <div className="projects__wrapper--card">
-        {w >= 700 && (
+        {w >= 800 && (
           <Card
             img={
-              "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+              cardProject === 0
+                ? data[data.length - 1].url
+                : data[cardProject - 1].url
             }
           />
         )}
-        <div className="arrow_left" style={{ color: "#fff" }}>
+        <div
+          onClick={() => handleClickBack()}
+          className="arrow_left"
+          style={{ color: "#fff" }}
+        >
           <ArrowBackIosIcon style={{ fontSize: 40 }} />
         </div>
         <div className="card__content">
-          <div>
-            <img
-              src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
-              alt=""
-            />
+          <div className="image">
+            <img src={data[cardProject].url} alt="" />
           </div>
-          <h3>Project X</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-            ea architecto dignissimos modi temporibus, nobis fuga ipsum possimus
-          </p>
+          <div className="flex">
+            <h3>{data[cardProject].projectName}</h3>
+            <p>{data[cardProject].projectDesc}</p>
+            <div className="btns">
+              <Button title={"GITHUB"} url={data[cardProject].gitUrl} />
+              <Button
+                title={"VIEW PROJECT"}
+                url={data[cardProject].projectUrl}
+              />
+            </div>
+          </div>
         </div>
-        <div className="arrow_right" style={{ color: "#fff" }}>
+        <div
+          className="arrow_right"
+          style={{ color: "#fff" }}
+          onClick={() => handleClickForward()}
+        >
           <ArrowForwardIosIcon style={{ fontSize: 40 }} />
         </div>
-        {w >= 700 && (
+        {w >= 800 && (
           <Card
             img={
-              "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+              cardProject === data.length - 1
+                ? data[0].url
+                : data[cardProject + 1].url
             }
           />
         )}
       </div>
-      <Button title={"CALL TO ACTION"} />
     </div>
   );
 }

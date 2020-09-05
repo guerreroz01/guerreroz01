@@ -9,7 +9,7 @@
 .projects__wrapper--card {
   display: flex;
   width: 100%;
-  height: 80%;
+  height: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -32,6 +32,7 @@
   position: relative;
   right: -2%;
   text-shadow: 2px 2px 30px #141414;
+  z-index: 1000;
 }
 
 .arrow_left:hover,
@@ -41,66 +42,118 @@
   transition: all 0.2s ease-out;
 }
 
-.card__content > div > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card__content > div {
+.card__content > .image {
   width: 80%;
   height: 350px;
   box-shadow: 0px 9px 19px -2px #000000;
 }
 
-.card__content > h3 {
-  font-size: 6.5rem;
+.card__content > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.card__content > .flex > h3 {
+  font-size: 4.5rem;
   letter-spacing: 0.8rem;
   color: #fff;
   position: relative;
-  top: -20px;
-  text-shadow: 0px 0px 30px #141414;
+  top: -10px;
+  background: transparent;
+  text-shadow: 1px 1px 40px #141414;
   cursor: pointer;
 }
+.card__content > .flex {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
 
-.card__content > p {
+.card__content > .flex > p {
   color: #fff;
   font-size: large;
-  position: relative;
   width: 140%;
   text-align: center;
   margin-bottom: 3rem;
-  margin-top: 1rem;
   text-shadow: 0px 0px 30px #141414;
 }
 
-@media screen and (max-height: 570px) {
-  .card__content > h3 {
-    font-size: 4.5rem;
+.card__content > .flex > .btns {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  position: relative;
+  margin-top: 6rem;
+  top: 60px;
+}
+
+@media screen and (max-width: 480px) {
+  .card__content > .flex > h3 {
+    font-size: 1rem;
   }
-  .card__content > p {
-    margin-bottom: 0;
-    font-size: small;
+  .projects__wrapper--card {
+    height: 100%;
+  }
+  .card__content > .flex > .btns {
+    flex-direction: column;
   }
 }
 
-@media screen and (max-width: 1300px) {
-  .card__content > h3 {
-    font-size: 4.5rem;
+@media screen and (max-width: 573px) {
+  .card__content > .btns {
+    flex-direction: column;
+    top: 60px;
   }
-  .card__content > p {
-    margin-bottom: 0;
-    font-size: medium;
+  .card__content > .flex > p {
+    display: none;
   }
-}
-@media screen and (max-width: 950px) {
-  .card__content > h3 {
-    font-size: 4rem;
+  .card__content > .flex > h3 {
+    font-size: 2rem;
   }
 }
+
+@media screen and (max-height: 600px) {
+  .card__content > .flex > h3 {
+    font-size: 2rem;
+    top: -100px;
+  }
+  .card__content {
+    position: static;
+  }
+  .card__content > .btns {
+    display: none;
+  }
+}
+@media screen and (max-height: 770px) {
+  .card__content > .flex > h3 {
+    font-size: 3.5rem;
+  }
+  .card__content > .flex > .btns {
+    display: none;
+  }
+  .card__content > .flex > p {
+    display: none;
+  }
+}
+@media screen and (max-height: 890px) {
+  .card__content > .flex > h3 {
+    font-size: 3.5rem;
+  }
+  .card__content > .flex > .btns {
+    margin-top: 0;
+    top: 10px;
+  }
+  .card__content > .flex > p {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 780px) {
-  .card__content > h3 {
-    font-size: 3rem;
+  .card__content > .flex > h3 {
+    font-size: 4rem;
   }
   .card__content > p {
     margin-bottom: 0;
@@ -108,14 +161,15 @@
     width: 100%;
   }
 }
-@media screen and (max-width: 380px) {
+
+@media screen and (max-width: 950px) {
   .card__content > h3 {
-    font-size: 3rem;
+    font-size: 4rem;
   }
+}
+@media screen and (max-width: 1340px) {
   .card__content > p {
-    display: none;
-  }
-  .projects__wrapper--card {
-    height: 70%;
+    margin-bottom: 0;
+    font-size: medium;
   }
 }
