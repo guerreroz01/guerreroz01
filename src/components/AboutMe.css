@@ -1,0 +1,14 @@
+.tech {
+  background: linear-gradient(
+    0deg,
+    #c2c0c0 0,
+    #ffffff 40%,
+    #d4d4d4 100%
+  ); /* W3C */
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 15px 0;
+  box-shadow: -1px 1px 19px -2px #000000;
+}
